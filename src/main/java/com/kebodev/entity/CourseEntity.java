@@ -22,10 +22,10 @@ public class CourseEntity {
 
     private String name;
 
-    @ManyToMany()
+    @ManyToMany(fetch = FetchType.EAGER)
     private Set<StudentEntity> students;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     private Set<TeacherEntity> teachers;
 
 
