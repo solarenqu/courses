@@ -14,6 +14,6 @@ public class StudentDto {
     private String name;
     private LocalDate birthDate;
     private int semester;
-    private Set<CourseDto> courses;
+    //private Set<CourseDto> courses;
 
 }

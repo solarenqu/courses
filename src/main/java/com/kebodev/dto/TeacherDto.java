@@ -16,5 +16,5 @@ public class TeacherDto {
     private BigDecimal id;
     private String name;
     private LocalDate birthDate;
-    private Set<CourseDto> courses;
+    //private Set<CourseDto> courses;
 }
