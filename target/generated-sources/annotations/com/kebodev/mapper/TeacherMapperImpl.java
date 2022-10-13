@@ -1,6 +1,5 @@
 package com.kebodev.mapper;
 
-import com.kebodev.dto.StudentDto;
 import com.kebodev.dto.TeacherDto;
 import com.kebodev.entity.TeacherEntity;
 import com.kebodev.entity.TeacherEntity.TeacherEntityBuilder;
@@ -11,7 +10,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2022-10-13T13:40:38+0200",
+    date = "2022-10-13T14:13:20+0200",
     comments = "version: 1.4.2.Final, compiler: javac, environment: Java 11.0.12 (Oracle Corporation)"
 )
 @Component
@@ -33,27 +32,27 @@ public class TeacherMapperImpl implements TeacherMapper {
     }
 
     @Override
-    public StudentDto teacherToDto(TeacherEntity teacherEntity) {
+    public TeacherDto teacherToDto(TeacherEntity teacherEntity) {
         if ( teacherEntity == null ) {
             return null;
         }
 
-        StudentDto studentDto = new StudentDto();
+        TeacherDto teacherDto = new TeacherDto();
 
-        studentDto.setId( teacherEntity.getId() );
-        studentDto.setName( teacherEntity.getName() );
-        studentDto.setBirthDate( teacherEntity.getBirthDate() );
+        teacherDto.setId( teacherEntity.getId() );
+        teacherDto.setName( teacherEntity.getName() );
+        teacherDto.setBirthDate( teacherEntity.getBirthDate() );
 
-        return studentDto;
+        return teacherDto;
     }
 
     @Override
-    public List<StudentDto> teacherToDtos(List<TeacherEntity> teacherEntities) {
+    public List<TeacherDto> teacherToDtos(List<TeacherEntity> teacherEntities) {
         if ( teacherEntities == null ) {
             return null;
         }
 
-        List<StudentDto> list = new ArrayList<StudentDto>( teacherEntities.size() );
+        List<TeacherDto> list = new ArrayList<TeacherDto>( teacherEntities.size() );
         for ( TeacherEntity teacherEntity : teacherEntities ) {
             list.add( teacherToDto( teacherEntity ) );
         }
@@ -62,12 +61,12 @@ public class TeacherMapperImpl implements TeacherMapper {
     }
 
     @Override
-    public List<StudentDto> teacherToDtos(Iterable<TeacherEntity> findAll) {
+    public List<TeacherDto> teacherToDtos(Iterable<TeacherEntity> findAll) {
         if ( findAll == null ) {
             return null;
         }
 
-        List<StudentDto> list = new ArrayList<StudentDto>();
+        List<TeacherDto> list = new ArrayList<TeacherDto>();
         for ( TeacherEntity teacherEntity : findAll ) {
             list.add( teacherToDto( teacherEntity ) );
         }

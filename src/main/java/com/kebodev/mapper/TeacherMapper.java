@@ -5,6 +5,7 @@ import com.kebodev.dto.TeacherDto;
 import com.kebodev.entity.StudentEntity;
 import com.kebodev.entity.TeacherEntity;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 
 import java.util.List;
 
@@ -13,9 +14,10 @@ public interface TeacherMapper {
 
     TeacherEntity dtoToTeacher(TeacherDto teacherDto);
 
-    StudentDto teacherToDto(TeacherEntity teacherEntity);
+    //@Mapping(ignore = true, target = "courses")
+    TeacherDto teacherToDto(TeacherEntity teacherEntity);
 
-    List<StudentDto> teacherToDtos(List<TeacherEntity> teacherEntities);
+    List<TeacherDto> teacherToDtos(List<TeacherEntity> teacherEntities);
 
-    List<StudentDto> teacherToDtos(Iterable<TeacherEntity> findAll);
+    List<TeacherDto> teacherToDtos(Iterable<TeacherEntity> findAll);
 }

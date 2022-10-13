@@ -19,7 +19,8 @@ public class CourseService {
     @Transactional
     public List<CourseEntity> findAllWithRealtions() {
 
-        List<CourseEntity> courseList = courseRepository.findAllWithStudents();
+        List<CourseEntity> courseList;
+        courseList = courseRepository.findAllWithStudents();
         courseList = courseRepository.findAllWithTeachers();
 
         return courseList;
