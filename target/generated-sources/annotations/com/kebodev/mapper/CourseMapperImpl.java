@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2022-10-13T13:07:30+0200",
+    date = "2022-10-13T13:18:32+0200",
     comments = "version: 1.4.2.Final, compiler: javac, environment: Java 11.0.12 (Oracle Corporation)"
 )
 @Component
@@ -52,6 +52,14 @@ public class CourseMapperImpl implements CourseMapper {
 
         courseDto.setId( courseEntity.getId() );
         courseDto.setName( courseEntity.getName() );
+        Set<StudentEntity> set = courseEntity.getStudents();
+        if ( set != null ) {
+            courseDto.setStudents( new HashSet<StudentEntity>( set ) );
+        }
+        Set<TeacherEntity> set1 = courseEntity.getTeachers();
+        if ( set1 != null ) {
+            courseDto.setTeachers( new HashSet<TeacherEntity>( set1 ) );
+        }
 
         return courseDto;
     }

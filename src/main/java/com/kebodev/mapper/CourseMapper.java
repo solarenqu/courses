@@ -15,8 +15,8 @@ public interface CourseMapper {
     CourseEntity dtoToCourse(CourseDto courseDto);
 
     @Named("summary")
-    @Mapping(ignore = true, target = "teachers")
-    @Mapping(ignore = true, target = "students")
+    //@Mapping(ignore = true, target = "teachers")
+    //@Mapping(ignore = true, target = "students")
     CourseDto courseToDto(CourseEntity courseEntity);
 
     List<CourseDto> coursesToDtos(List<CourseEntity> courseEntities);
